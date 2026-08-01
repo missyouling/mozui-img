@@ -82,7 +82,7 @@ function renderIndexHtml() {
     body { font-family: -apple-system, "SF Pro Display", sans-serif; margin: 0; padding: 0; color: var(--app-text); min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-image: url('https://random.mozuiapp.com/?day=random'); background-size: cover; background-position: center; background-attachment: fixed; overflow-x: hidden; }
     
     /* 🏆 修复：导航栏换成白色毛玻璃底，确保在任何随机壁纸下文字都清晰可见 */
-    .nav { margin-bottom: 14px; display: inline-flex; background: rgba(255, 255, 255, 0.65); backdrop-filter: blur(30px) saturate(180%); -webkit-backdrop-filter: blur(30px) saturate(180%); padding: 5px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08), inset 0 1px 1px rgba(255,255,255,0.8); z-index: 10; border: 0.5px solid rgba(255,255,255,0.5); }
+    .nav { margin-bottom: 14px; align-self: flex-start; display: inline-flex; background: rgba(255, 255, 255, 0.65); backdrop-filter: blur(30px) saturate(180%); -webkit-backdrop-filter: blur(30px) saturate(180%); padding: 5px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08), inset 0 1px 1px rgba(255,255,255,0.8); z-index: 10; border: 0.5px solid rgba(255,255,255,0.5); }
     .nav-tab { padding: 6px 24px; font-size: 13px; font-weight: 600; cursor: pointer; border-radius: 8px; transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1); color: #1D1D1F; opacity: 0.6; }
     .nav-tab.active { background: #fff; opacity: 1; box-shadow: 0 2px 6px rgba(0,0,0,0.08); color: var(--apple-blue); }
 
