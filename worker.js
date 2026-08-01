@@ -144,7 +144,7 @@ function renderIndexHtml() {
     .settings-input { border: 0.5px solid rgba(0,0,0,0.15); border-radius: 6px; padding: 4px 8px; font-size: 13px; width: 200px; outline: none; background: #fff; font-family: monospace; }
     .settings-input:focus { border-color: var(--apple-blue); box-shadow: 0 0 0 3px rgba(0,122,255,0.2); }
 
-    .footer { margin-top: 24px; margin-bottom: 30px; text-align: center; font-size: 13px; color: rgba(255, 255, 255, 0.9); text-shadow: 0 1px 5px rgba(0,0,0,0.5); font-weight: 500; z-index: 1; }
+    .footer { position: fixed; bottom: 18px; left: 0; right: 0; text-align: center; font-size: 13px; color: rgba(255, 255, 255, 0.9); text-shadow: 0 1px 5px rgba(0,0,0,0.5); font-weight: 500; z-index: 1; }
     .footer a { color: #fff; text-decoration: none; transition: opacity 0.2s; }
     .footer a:hover { opacity: 0.8; text-decoration: underline; }
 
@@ -217,9 +217,10 @@ function renderIndexHtml() {
 
     </div>
     
-    <div class="footer">
-      MOZUI 图床 | GitHub: <a href="https://github.com/missyouling/mozui-img" target="_blank">missyouling/mozui-img</a>
-    </div>
+  </div>
+
+  <div class="footer">
+    MOZUI 图床 | GitHub: <a href="https://github.com/missyouling/mozui-img" target="_blank">missyouling/mozui-img</a>
   </div>
 
   <script>
