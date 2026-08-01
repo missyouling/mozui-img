@@ -82,16 +82,19 @@ function renderIndexHtml() {
     body { font-family: -apple-system, "SF Pro Display", sans-serif; margin: 0; padding: 0; color: var(--app-text); min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-image: url('https://random.mozuiapp.com/?day=random'); background-size: cover; background-position: center; background-attachment: fixed; overflow-x: hidden; }
     
     /* 🏆 修复：导航栏换成白色毛玻璃底，确保在任何随机壁纸下文字都清晰可见 */
-    .nav { margin-bottom: 14px; align-self: flex-start; display: inline-flex; background: rgba(255, 255, 255, 0.65); backdrop-filter: blur(30px) saturate(180%); -webkit-backdrop-filter: blur(30px) saturate(180%); padding: 5px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08), inset 0 1px 1px rgba(255,255,255,0.8); z-index: 10; border: 0.5px solid rgba(255,255,255,0.5); }
+    .nav { margin-bottom: 14px; align-self: center; display: inline-flex; background: rgba(255, 255, 255, 0.65); backdrop-filter: blur(30px) saturate(180%); -webkit-backdrop-filter: blur(30px) saturate(180%); padding: 5px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08), inset 0 1px 1px rgba(255,255,255,0.8); z-index: 10; border: 0.5px solid rgba(255,255,255,0.5); }
     .nav-tab { padding: 6px 24px; font-size: 13px; font-weight: 600; cursor: pointer; border-radius: 8px; transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1); color: #1D1D1F; opacity: 0.6; }
     .nav-tab.active { background: #fff; opacity: 1; box-shadow: 0 2px 6px rgba(0,0,0,0.08); color: var(--apple-blue); }
+    .logout-btn { position: absolute; top: 16px; right: 16px; width: 36px; height: 36px; border-radius: 50%; border: 0.5px solid rgba(0,0,0,0.08); background: rgba(255,255,255,0.7); color: #6E6E73; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; padding: 0; z-index: 5; }
+    .logout-btn svg { width: 16px; height: 16px; }
+    .logout-btn:hover { background: #fff; color: #FF3B30; border-color: rgba(255,59,48,0.3); box-shadow: 0 2px 8px rgba(255,59,48,0.15); }
 
     .container { width: 100%; max-width: 720px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; margin: auto 0; }
     .glass-panel { background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(40px) saturate(180%); -webkit-backdrop-filter: blur(40px) saturate(180%); padding: 40px; border-radius: var(--border-radius); border: 0.5px solid rgba(255, 255, 255, 0.8); box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); width: 100%; box-sizing: border-box; position: relative; overflow: hidden; min-height: 300px; }
     
     h1 { font-size: 32px; font-weight: 700; margin: 0 0 24px 0; letter-spacing: -0.02em; text-align: center; color: var(--app-text); }
 
-    .tab-content { display: none; animation: fadeIn 0.2s ease; }
+    .tab-content { display: none; animation: fadeIn 0.2s ease; min-height: 340px; }
     .tab-content.active { display: block; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -205,6 +208,9 @@ function renderIndexHtml() {
       </div>
 
       <div id="settingsUI" class="tab-content">
+        <button onclick="logout()" class="logout-btn" aria-label="退出登录">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>
+        </button>
         <div class="settings-group">
           <div class="settings-row">
             <span class="settings-label">API Token</span>
@@ -355,6 +361,15 @@ function renderIndexHtml() {
       const token = document.getElementById('apiTokenInput').value.trim();
       localStorage.setItem('mozui_img_api_key', token);
       showToast('✅ 保存成功');
+    }
+
+    function logout() {
+      localStorage.removeItem('mozui_img_pwd');
+      document.getElementById('mainNav').style.display = 'none';
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.getElementById('loginUI').style.display = 'flex';
+      document.getElementById('pwdInput').value = '';
+      showToast('✅ 已退出登录');
     }
 
     const dropZone = document.getElementById('dropZone');
