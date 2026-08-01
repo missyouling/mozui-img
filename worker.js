@@ -79,14 +79,14 @@ function renderIndexHtml() {
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2024%2024%27%3E%3Crect%20width%3D%2724%27%20height%3D%2724%27%20rx%3D%275.5%27%20fill%3D%27%230071E3%27%2F%3E%3Cpath%20d%3D%27M10%2013a5%205%200%200%200%207.54.54l3-3a5%205%200%200%200-7.07-7.07l-1.72%201.71%27%20fill%3D%27none%27%20stroke%3D%27%23fff%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%2F%3E%3Cpath%20d%3D%27M14%2011a5%205%200%200%200-7.54-.54l-3%203a5%205%200%200%200%207.07%207.07l1.71-1.71%27%20fill%3D%27none%27%20stroke%3D%27%23fff%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27%2F%3E%3C%2Fsvg%3E">
   <style>
     :root { --app-text: #1D1D1F; --app-secondary-text: #86868B; --apple-blue: #007AFF; --apple-blue-hover: #0062CC; --border-color: rgba(0, 0, 0, 0.1); --border-radius: 20px; }
-    body { font-family: -apple-system, "SF Pro Display", sans-serif; margin: 0; padding: 0; color: var(--app-text); min-height: 100vh; display: flex; flex-direction: column; align-items: center; background-image: url('https://random.mozuiapp.com/?day=random'); background-size: cover; background-position: center; background-attachment: fixed; overflow-x: hidden; }
+    body { font-family: -apple-system, "SF Pro Display", sans-serif; margin: 0; padding: 0; color: var(--app-text); min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-image: url('https://random.mozuiapp.com/?day=random'); background-size: cover; background-position: center; background-attachment: fixed; overflow-x: hidden; }
     
     /* 🏆 修复：导航栏换成白色毛玻璃底，确保在任何随机壁纸下文字都清晰可见 */
     .nav { margin-top: 40px; display: inline-flex; background: rgba(255, 255, 255, 0.65); backdrop-filter: blur(30px) saturate(180%); -webkit-backdrop-filter: blur(30px) saturate(180%); padding: 5px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08), inset 0 1px 1px rgba(255,255,255,0.8); z-index: 10; border: 0.5px solid rgba(255,255,255,0.5); }
     .nav-tab { padding: 6px 24px; font-size: 13px; font-weight: 600; cursor: pointer; border-radius: 8px; transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1); color: #1D1D1F; opacity: 0.6; }
     .nav-tab.active { background: #fff; opacity: 1; box-shadow: 0 2px 6px rgba(0,0,0,0.08); color: var(--apple-blue); }
 
-    .container { width: 100%; max-width: 720px; padding: 20px; box-sizing: border-box; flex: 1; display: flex; flex-direction: column; }
+    .container { width: 100%; max-width: 720px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; margin: auto 0; }
     .glass-panel { background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(40px) saturate(180%); -webkit-backdrop-filter: blur(40px) saturate(180%); padding: 40px; border-radius: var(--border-radius); border: 0.5px solid rgba(255, 255, 255, 0.8); box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); width: 100%; box-sizing: border-box; position: relative; overflow: hidden; min-height: 300px; }
     
     h1 { font-size: 32px; font-weight: 700; margin: 0 0 24px 0; letter-spacing: -0.02em; text-align: center; color: var(--app-text); }
