@@ -6,6 +6,10 @@
 ![Build](https://img.shields.io/badge/build-Cloudflare_Workers-orange.svg)
 ![UI](https://img.shields.io/badge/UI-macOS_Style-lightgrey.svg)
 
+## 🚀 在线体验
+
+**体验地址：** https://img.mozuiapp.com
+
 ## ✨ 核心特性
 
 本项目遵循 **"大道至简"** 的设计哲学。由于第三方图床通常设有严格的防爬虫策略（如 Cloudflare 5 秒盾、CORS 跨域拦截），本项目去除了冗余的画廊管理功能，将核心 100% 聚焦于 **"极速上传与便捷分发"**，把图片管理权交还给官方控制台。
